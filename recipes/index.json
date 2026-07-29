@@ -5,6 +5,14 @@
     "mealCategory": "Sides",
     "category": "Side Dish",
     "description": "A light Greek-inspired cucumber and red onion salad with a creamy tzatziki-style yogurt dressing.",
+    "tags": [
+      "cucumber-salad",
+      "tzatziki",
+      "greek",
+      "vegetarian",
+      "no-cook",
+      "side-dish"
+    ],
     "file": "recipes/R001-Cucumber-Salad"
   },
   {
@@ -13,6 +21,13 @@
     "mealCategory": "Sides",
     "category": "Side Dish",
     "description": "Crispy, healthier-than-deep-fried russet potato fries made in the air fryer.",
+    "tags": [
+      "air-fryer-fries",
+      "french-fries",
+      "russet-potatoes",
+      "air-fryer",
+      "side-dish"
+    ],
     "file": "recipes/R002 Crispy-Air-Fryer-Fries"
   },
   {
@@ -21,6 +36,14 @@
     "mealCategory": "Dinner",
     "category": "Soup",
     "description": "A hearty Italian sausage soup with cannellini beans, spinach, tomatoes, and small pasta.",
+    "tags": [
+      "italian-sausage-soup",
+      "white-bean-soup",
+      "spinach-soup",
+      "italian",
+      "one-pot",
+      "dinner"
+    ],
     "file": "recipes/R003-Italian-Sausage-Soup-with-White-Beans"
   }
 ]
