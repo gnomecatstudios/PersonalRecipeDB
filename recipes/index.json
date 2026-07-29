@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "R001",
+    "title": "Tzatziki Cucumber Salad",
+    "category": "Side Dish",
+    "description": "A light Greek-inspired cucumber and red onion salad with a creamy tzatziki-style yogurt dressing.",
+    "file": "recipes/R001-Cucumber-Salad"
+  },
+  {
+    "id": "R002",
+    "title": "Crispy Air Fryer Fries",
+    "category": "Side Dish",
+    "description": "Crispy, healthier-than-deep-fried russet potato fries made in the air fryer.",
+    "file": "recipes/R002 Crispy-Air-Fryer-Fries"
+  },
+  {
+    "id": "R003",
+    "title": "Italian Sausage Soup with White Beans and Spinach",
+    "category": "Soup",
+    "description": "A hearty Italian sausage soup with cannellini beans, spinach, tomatoes, and small pasta.",
+    "file": "recipes/R003-Italian-Sausage-Soup-with-White-Beans"
+  }
+]
