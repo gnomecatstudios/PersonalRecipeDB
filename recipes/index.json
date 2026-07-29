@@ -13,7 +13,7 @@
       "no-cook",
       "side-dish"
     ],
-    "file": "recipes/R001-Cucumber-Salad"
+    "file": "recipes/R001-Cucumber-Salad.md"
   },
   {
     "id": "R002",
@@ -28,7 +28,7 @@
       "air-fryer",
       "side-dish"
     ],
-    "file": "recipes/R002 Crispy-Air-Fryer-Fries"
+    "file": "recipes/R002-Crispy-Air-Fryer-Fries.md"
   },
   {
     "id": "R003",
@@ -44,7 +44,7 @@
       "one-pot",
       "dinner"
     ],
-    "file": "recipes/R003-Italian-Sausage-Soup-with-White-Beans"
+    "file": "recipes/R003-Italian-Sausage-Soup-with-White-Beans.md"
   },
   {
     "id": "R004",
@@ -61,23 +61,24 @@
       "skillet-dinner",
       "dinner"
     ],
-    "file": "recipes/R004-Homemade-Egg-Roll-in-a-Bowl"
+    "file": "recipes/R004-Homemade-Egg-Roll-in-a-Bowl.md"
   },
   {
     "id": "R005",
     "title": "Lasagna Soup",
     "mealCategory": "Dinner",
     "category": "Soup",
-    "description": "A hearty tomato-based soup with Italian sausage, pasta, basil, ricotta, Parmesan, and mozzarella.",
+    "description": "A hearty tomato-based soup with Italian sausage, pasta, basil, ricotta or cottage cheese, Parmesan, and mozzarella.",
     "tags": [
       "lasagna-soup",
       "italian-sausage",
       "tomato-soup",
       "pasta-soup",
       "ricotta",
+      "cottage-cheese-option",
       "one-pot",
       "dinner"
     ],
-    "file": "recipes/R005-Lasagna-Soup"
+    "file": "recipes/R005-Lasagna-Soup.md"
   }
 ]
