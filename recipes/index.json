@@ -45,5 +45,22 @@
       "dinner"
     ],
     "file": "recipes/R003-Italian-Sausage-Soup-with-White-Beans"
+  },
+  {
+    "id": "R004",
+    "title": "Homemade Egg Roll in a Bowl",
+    "mealCategory": "Dinner",
+    "category": "Skillet",
+    "description": "A quick one-pan dinner with ground pork, shredded cabbage, carrots, ginger, garlic, soy sauce, and toasted sesame oil.",
+    "tags": [
+      "egg-roll-in-a-bowl",
+      "ground-pork",
+      "cabbage",
+      "carrots",
+      "one-pan",
+      "skillet-dinner",
+      "dinner"
+    ],
+    "file": "recipes/R004-Homemade-Egg-Roll-in-a-Bowl"
   }
 ]
