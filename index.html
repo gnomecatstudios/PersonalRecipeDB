@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calvin's Recipe Book</title>
+<style>
+:root{--bg:#fff8ed;--card:#fff;--ink:#2c211b;--muted:#75645a;--accent:#914b2c;--line:#e2cfb8}*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff8ed,#f3e5cf);color:var(--ink);font-family:system-ui,-apple-system,sans-serif;line-height:1.5}.wrap{width:min(1050px,calc(100% - 28px));margin:auto}header{padding:48px 0 24px}.hero{padding:36px;border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.8);box-shadow:0 20px 50px #57311618}h1{margin:0;font-family:Georgia,serif;font-size:clamp(2.5rem,8vw,5rem);line-height:1}.hero p{max-width:680px;color:var(--muted)}input{width:100%;margin:24px 0 16px;padding:15px 18px;border:1px solid var(--line);border-radius:999px;font:inherit}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding-bottom:50px}.card{padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:0 12px 28px #57311610;cursor:pointer}.card h2{margin:7px 0;font-family:Georgia,serif}.cat{color:var(--accent);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.desc{color:var(--muted)}.empty{padding:42px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px;background:#ffffff88}dialog{width:min(820px,calc(100% - 24px));max-height:calc(100vh - 24px);border:0;border-radius:22px;padding:0;background:var(--bg)}dialog::backdrop{background:#241a15aa}.bar{position:sticky;top:0;text-align:right;padding:12px;background:#fff8edee;border-bottom:1px solid var(--line)}button{border:1px solid var(--line);border-radius:999px;background:white;padding:9px 14px;cursor:pointer}.body{padding:30px}.body h1{font-size:2.7rem}.body h2{font-family:Georgia,serif;border-bottom:1px solid var(--line);padding-bottom:5px}footer{text-align:center;color:var(--muted);padding:0 0 40px}@media(max-width:600px){header{padding-top:20px}.hero{padding:26px}.body{padding:22px}}
+</style>
+</head>
+<body>
+<header class="wrap"><section class="hero"><div class="cat">Personal Recipe Collection</div><h1>Calvin's Recipe Book</h1><p>A searchable home for recipes, freezer instructions, nutrition notes, substitutions, and changes worth remembering next time.</p></section><input id="search" type="search" placeholder="Search recipes or ingredients…" aria-label="Search recipes"></header>
+<main class="wrap"><div id="grid" class="grid"></div></main>
+<footer class="wrap">PersonalRecipeDB · Built with GitHub Pages</footer>
+<dialog id="recipe"><div class="bar"><button id="close">Close</button></div><article id="body" class="body"></article></dialog>
+<script>
+const grid=document.querySelector('#grid'),search=document.querySelector('#search'),dialog=document.querySelector('#recipe'),body=document.querySelector('#body');let recipes=[];
+function esc(s=''){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function md(s){return s.split('\n').map(x=>{if(x.startsWith('# '))return `<h1>${esc(x.slice(2))}</h1>`;if(x.startsWith('## '))return `<h2>${esc(x.slice(3))}</h2>`;if(x.startsWith('### '))return `<h3>${esc(x.slice(4))}</h3>`;if(/^\d+\. /.test(x))return `<p>${esc(x)}</p>`;if(x.startsWith('- '))return `<p>• ${esc(x.slice(2))}</p>`;return x.trim()?`<p>${esc(x)}</p>`:''}).join('')}
+function render(){const q=search.value.toLowerCase().trim(),shown=recipes.filter(r=>JSON.stringify(r).toLowerCase().includes(q));grid.innerHTML=shown.length?shown.map((r,i)=>`<article class="card" data-i="${i}"><div class="cat">${esc(r.category||'Recipe')}</div><h2>${esc(r.title)}</h2><div class="desc">${esc(r.description||'Open recipe')}</div></article>`).join(''):`<div class="empty">${recipes.length?'No recipes match that search.':'No recipes have been added yet.'}</div>`;[...grid.querySelectorAll('.card')].forEach((el,n)=>el.onclick=()=>openRecipe(shown[n]))}
+async function openRecipe(r){try{body.innerHTML=md(await fetch(r.file).then(x=>x.text()));dialog.showModal()}catch{body.innerHTML='<h1>Recipe unavailable</h1>';dialog.showModal()}}
+fetch('recipes/index.json').then(r=>r.json()).then(x=>{recipes=x;render()}).catch(render);search.addEventListener('input',render);document.querySelector('#close').onclick=()=>dialog.close();
+</script>
+</body>
+</html>
