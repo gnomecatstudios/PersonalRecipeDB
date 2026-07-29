@@ -62,5 +62,22 @@
       "dinner"
     ],
     "file": "recipes/R004-Homemade-Egg-Roll-in-a-Bowl"
+  },
+  {
+    "id": "R005",
+    "title": "Lasagna Soup",
+    "mealCategory": "Dinner",
+    "category": "Soup",
+    "description": "A hearty tomato-based soup with Italian sausage, pasta, basil, ricotta, Parmesan, and mozzarella.",
+    "tags": [
+      "lasagna-soup",
+      "italian-sausage",
+      "tomato-soup",
+      "pasta-soup",
+      "ricotta",
+      "one-pot",
+      "dinner"
+    ],
+    "file": "recipes/R005-Lasagna-Soup"
   }
 ]
