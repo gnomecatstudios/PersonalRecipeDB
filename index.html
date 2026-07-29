@@ -9,7 +9,7 @@
 </style>
 </head>
 <body>
-<header class="wrap"><section class="hero"><div class="eyebrow">Personal Recipe Collection</div><h1>Calvin's Recipe Book</h1><p>Browse Breakfast, Lunch, Dinner, and Sides, or search the full recipe collection.</p></section><input id="search" type="search" placeholder="Search recipes or ingredients…" aria-label="Search recipes"></header>
+<header class="wrap"><section class="hero"><div class="eyebrow">Personal Recipe Collection</div><h1>Calvin's Recipe Book</h1><p>Browse Breakfast, Lunch, Dinner, Sides, and Sweets, or search the full recipe collection.</p></section><input id="search" type="search" placeholder="Search recipes or ingredients…" aria-label="Search recipes"></header>
 <main class="wrap"><div class="topline"><h2 id="view-title" class="section-title">Recipe Categories</h2><button id="back" class="back" type="button">← Categories</button></div><div id="content" class="category-grid"></div></main>
 <footer class="wrap">PersonalRecipeDB · Built with GitHub Pages</footer>
 <dialog id="recipe"><div class="bar"><button id="close">Close</button></div><article id="body" class="body"></article></dialog>
@@ -24,12 +24,13 @@ const categories=[
   {name:'Breakfast',icon:'☀️',description:'Morning meals, eggs, baked breakfasts, and make-ahead options.'},
   {name:'Lunch',icon:'🥪',description:'Packable meals, salads, bowls, sandwiches, and lighter soups.'},
   {name:'Dinner',icon:'🍽️',description:'Main dishes, hearty soups, casseroles, and evening meals.'},
-  {name:'Sides',icon:'🥔',description:'Vegetables, salads, potatoes, breads, and dishes served alongside a meal.'}
+  {name:'Sides',icon:'🥔',description:'Vegetables, salads, potatoes, breads, and dishes served alongside a meal.'},
+  {name:'Sweets',icon:'🍰',description:'Desserts, cookies, cakes, pies, candies, and other sweet treats.'}
 ];
 let recipes=[];
 let activeCategory=null;
 function esc(value=''){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]))}
-function mealCategory(recipe){if(recipe.mealCategory)return recipe.mealCategory;if(recipe.category==='Side Dish')return 'Sides';if(recipe.category==='Soup')return 'Dinner';return recipe.category||'Dinner'}
+function mealCategory(recipe){if(recipe.mealCategory)return recipe.mealCategory;if(recipe.category==='Side Dish')return 'Sides';if(recipe.category==='Soup')return 'Dinner';if(['Dessert','Desserts','Sweet','Sweets'].includes(recipe.category))return 'Sweets';return recipe.category||'Dinner'}
 function md(text){return text.split('\n').map(line=>{if(line.startsWith('# '))return `<h1>${esc(line.slice(2))}</h1>`;if(line.startsWith('## '))return `<h2>${esc(line.slice(3))}</h2>`;if(line.startsWith('### '))return `<h3>${esc(line.slice(4))}</h3>`;if(/^\d+\. /.test(line))return `<p>${esc(line)}</p>`;if(line.startsWith('- '))return `<p>• ${esc(line.slice(2))}</p>`;return line.trim()?`<p>${esc(line)}</p>`:''}).join('')}
 function recipeCards(list){if(!list.length)return '<div class="empty">No recipes have been added to this category yet.</div>';return list.map((recipe,index)=>`<button class="recipe-card" data-index="${index}" type="button"><div class="recipe-type">${esc(recipe.category||'Recipe')}</div><h2>${esc(recipe.title)}</h2><p class="desc">${esc(recipe.description||'Open recipe')}</p></button>`).join('')}
 function showCategories(){activeCategory=null;title.textContent='Recipe Categories';back.style.display='none';content.className='category-grid';content.innerHTML=categories.map((category,index)=>{const count=recipes.filter(recipe=>mealCategory(recipe)===category.name).length;return `<button class="category-card" data-category="${index}" type="button"><div><div class="category-icon">${category.icon}</div><h2>${esc(category.name)}</h2><p>${esc(category.description)}</p></div><span class="count">${count} ${count===1?'recipe':'recipes'}</span></button>`}).join('');content.querySelectorAll('.category-card').forEach(button=>button.addEventListener('click',()=>showCategory(categories[Number(button.dataset.category)].name)))}
