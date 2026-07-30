@@ -97,5 +97,21 @@
       "dinner"
     ],
     "file": "recipes/R006-Garlic-Lemon-Shrimp-and-Carrots.md"
+  },
+  {
+    "id": "R010",
+    "title": "German Pancake (Dutch Baby)",
+    "mealCategory": "Breakfast",
+    "category": "Baked Breakfast",
+    "description": "A classic German pancake baked in a hot cast-iron skillet until dramatically puffed and golden.",
+    "tags": [
+      "german-pancake",
+      "dutch-baby",
+      "cast-iron",
+      "baked-breakfast",
+      "eggs",
+      "breakfast"
+    ],
+    "file": "recipes/R010-German-Pancake-Dutch-Baby.md"
   }
 ]
