@@ -80,5 +80,22 @@
       "dinner"
     ],
     "file": "recipes/R005-Lasagna-Soup.md"
+  },
+  {
+    "id": "R006",
+    "title": "Garlic Lemon Shrimp and Carrots",
+    "mealCategory": "Dinner",
+    "category": "Skillet",
+    "description": "A quick garlic-lemon shrimp skillet with tender-crisp carrots and red bell pepper, served alone or over rice.",
+    "tags": [
+      "garlic-lemon-shrimp",
+      "shrimp-skillet",
+      "carrots",
+      "bell-pepper",
+      "high-protein",
+      "quick-dinner",
+      "dinner"
+    ],
+    "file": "recipes/R006-Garlic-Lemon-Shrimp-and-Carrots.md"
   }
 ]
