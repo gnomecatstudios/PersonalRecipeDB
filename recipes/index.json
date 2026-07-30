@@ -5,14 +5,7 @@
     "mealCategory": "Sides",
     "category": "Side Dish",
     "description": "A light Greek-inspired cucumber and red onion salad with a creamy tzatziki-style yogurt dressing.",
-    "tags": [
-      "cucumber-salad",
-      "tzatziki",
-      "greek",
-      "vegetarian",
-      "no-cook",
-      "side-dish"
-    ],
+    "tags": ["cucumber-salad", "tzatziki", "greek", "vegetarian", "no-cook", "side-dish"],
     "file": "recipes/R001-Cucumber-Salad.md"
   },
   {
@@ -21,13 +14,7 @@
     "mealCategory": "Sides",
     "category": "Side Dish",
     "description": "Crispy, healthier-than-deep-fried russet potato fries made in the air fryer.",
-    "tags": [
-      "air-fryer-fries",
-      "french-fries",
-      "russet-potatoes",
-      "air-fryer",
-      "side-dish"
-    ],
+    "tags": ["air-fryer-fries", "french-fries", "russet-potatoes", "air-fryer", "side-dish"],
     "file": "recipes/R002-Crispy-Air-Fryer-Fries.md"
   },
   {
@@ -36,14 +23,7 @@
     "mealCategory": "Dinner",
     "category": "Soup",
     "description": "A hearty Italian sausage soup with cannellini beans, spinach, tomatoes, and small pasta.",
-    "tags": [
-      "italian-sausage-soup",
-      "white-bean-soup",
-      "spinach-soup",
-      "italian",
-      "one-pot",
-      "dinner"
-    ],
+    "tags": ["italian-sausage-soup", "white-bean-soup", "spinach-soup", "italian", "one-pot", "dinner"],
     "file": "recipes/R003-Italian-Sausage-Soup-with-White-Beans.md"
   },
   {
@@ -52,15 +32,7 @@
     "mealCategory": "Dinner",
     "category": "Skillet",
     "description": "A quick one-pan dinner with ground pork, shredded cabbage, carrots, ginger, garlic, soy sauce, and toasted sesame oil.",
-    "tags": [
-      "egg-roll-in-a-bowl",
-      "ground-pork",
-      "cabbage",
-      "carrots",
-      "one-pan",
-      "skillet-dinner",
-      "dinner"
-    ],
+    "tags": ["egg-roll-in-a-bowl", "ground-pork", "cabbage", "carrots", "one-pan", "skillet-dinner", "dinner"],
     "file": "recipes/R004-Homemade-Egg-Roll-in-a-Bowl.md"
   },
   {
@@ -69,16 +41,7 @@
     "mealCategory": "Dinner",
     "category": "Soup",
     "description": "A hearty tomato-based soup with Italian sausage, pasta, basil, ricotta or cottage cheese, Parmesan, and mozzarella.",
-    "tags": [
-      "lasagna-soup",
-      "italian-sausage",
-      "tomato-soup",
-      "pasta-soup",
-      "ricotta",
-      "cottage-cheese-option",
-      "one-pot",
-      "dinner"
-    ],
+    "tags": ["lasagna-soup", "italian-sausage", "tomato-soup", "pasta-soup", "ricotta", "cottage-cheese-option", "one-pot", "dinner"],
     "file": "recipes/R005-Lasagna-Soup.md"
   },
   {
@@ -87,15 +50,7 @@
     "mealCategory": "Dinner",
     "category": "Skillet",
     "description": "A quick garlic-lemon shrimp skillet with tender-crisp carrots and red bell pepper, served alone or over rice.",
-    "tags": [
-      "garlic-lemon-shrimp",
-      "shrimp-skillet",
-      "carrots",
-      "bell-pepper",
-      "high-protein",
-      "quick-dinner",
-      "dinner"
-    ],
+    "tags": ["garlic-lemon-shrimp", "shrimp-skillet", "carrots", "bell-pepper", "high-protein", "quick-dinner", "dinner"],
     "file": "recipes/R006-Garlic-Lemon-Shrimp-and-Carrots.md"
   },
   {
@@ -104,14 +59,7 @@
     "mealCategory": "Breakfast",
     "category": "Baked Breakfast",
     "description": "A classic German pancake baked in a hot cast-iron skillet until dramatically puffed and golden.",
-    "tags": [
-      "german-pancake",
-      "dutch-baby",
-      "cast-iron",
-      "baked-breakfast",
-      "eggs",
-      "breakfast"
-    ],
+    "tags": ["german-pancake", "dutch-baby", "cast-iron", "baked-breakfast", "eggs", "breakfast"],
     "file": "recipes/R010-German-Pancake-Dutch-Baby.md"
   },
   {
@@ -120,14 +68,34 @@
     "mealCategory": "Dinner",
     "category": "Soup",
     "description": "A creamy ham and potato soup with celery, onion, and a simple butter-and-flour milk base.",
-    "tags": [
-      "ham-and-potato-soup",
-      "potato-soup",
-      "ham-soup",
-      "creamy-soup",
-      "one-pot",
-      "dinner"
-    ],
+    "tags": ["ham-and-potato-soup", "potato-soup", "ham-soup", "creamy-soup", "one-pot", "dinner"],
     "file": "recipes/R011-Delicious-Ham-and-Potato-Soup.md"
+  },
+  {
+    "id": "R013",
+    "title": "Taco Salad",
+    "mealCategory": "Dinner",
+    "category": "Salad",
+    "description": "A hearty taco salad with seasoned lean beef, crisp vegetables, beans, and a Greek yogurt salsa dressing.",
+    "tags": ["taco-salad", "ground-beef", "meal-prep", "high-protein", "mexican-inspired", "cucumber", "cabbage"],
+    "file": "recipes/R013-taco-salad.md"
+  },
+  {
+    "id": "R014",
+    "title": "Pumpkin Biscuits",
+    "mealCategory": "Breakfast",
+    "category": "Baked Breakfast",
+    "description": "Tender pumpkin buttermilk biscuits with cinnamon and nutmeg, mixed quickly in a food processor.",
+    "tags": ["pumpkin-biscuits", "buttermilk-biscuits", "fall-baking", "quick-bread", "breakfast", "side-dish"],
+    "file": "recipes/R014-Pumpkin-Biscuits.md"
+  },
+  {
+    "id": "R015",
+    "title": "Lemon-Glazed Persimmon Bars",
+    "mealCategory": "Dessert",
+    "category": "Bars",
+    "description": "Moist spiced persimmon bars with chopped dates and walnuts, finished with a simple lemon glaze.",
+    "tags": ["persimmon-bars", "lemon-glaze", "date-bars", "walnut-dessert", "fruit-dessert", "holiday-baking"],
+    "file": "recipes/R015-Lemon-Glazed-Persimmon-Bars.md"
   }
 ]
