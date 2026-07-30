@@ -40,7 +40,7 @@ dialog::backdrop{background:#241a15aa}
 .body code{font-family:inherit;background:var(--soft);border-radius:5px;padding:1px 5px;color:var(--accent)}
 .body ul,.body ol{padding-left:1.35rem}
 .body li{margin:.35rem 0}
-.print-meta{display:none}
+.print-meta,.print-page,.digital-only-note{display:none}
 footer{text-align:center;color:var(--muted);padding:0 0 40px}
 @media(max-width:600px){header{padding-top:20px}.hero{padding:26px}.body{padding:22px}.category-grid,.recipe-grid{grid-template-columns:1fr}}
 
@@ -50,15 +50,29 @@ footer{text-align:center;color:var(--muted);padding:0 0 40px}
   body>*:not(dialog){display:none!important}
   dialog,dialog[open]{display:block!important;position:static!important;inset:auto!important;width:auto!important;max-width:none!important;height:auto!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow:visible!important;background:#fff!important;box-shadow:none!important}
   dialog::backdrop,.bar{display:none!important}
-  .body{width:auto!important;margin:0!important;padding:0!important;font-family:Arial,Helvetica,sans-serif;font-size:8.2pt;line-height:1.16;color:#000}
-  .body h1{margin:0 0 3pt;font-family:Georgia,serif;font-size:15pt;line-height:1.04;border-bottom:1.1pt solid #000;padding-bottom:3pt}
-  .print-meta{display:grid!important;grid-template-columns:repeat(3,max-content);gap:3pt 14pt;margin:0 0 5pt;font-size:8pt;line-height:1.1}
+  .body{width:auto!important;margin:0!important;padding:0!important;font-family:Arial,Helvetica,sans-serif;font-size:8pt;line-height:1.12;color:#000}
+  .body>h1,.body>.print-meta{display:none!important}
+  .print-page{display:block!important;position:relative;width:100%;height:3.5in;overflow:hidden;break-after:page;page-break-after:always}
+  .print-page:last-child{break-after:auto;page-break-after:auto}
+  .card-header{display:block!important;margin:0 0 4pt}
+  .card-header h1{display:block!important;margin:0 0 3pt;font-family:Georgia,serif;font-size:14pt;line-height:1.02;border-bottom:1.1pt solid #000;padding-bottom:2.5pt}
+  .print-meta{display:grid!important;grid-template-columns:repeat(3,max-content);gap:2pt 12pt;margin:0 0 4pt;font-size:7.7pt;line-height:1.05}
   .print-meta strong{font-weight:700}
-  .body h2{margin:5pt 0 2.5pt;font-family:Georgia,serif;font-size:10.5pt;line-height:1.05;border-bottom:.6pt solid #777;padding-bottom:1.5pt;break-after:avoid-page}
-  .body h3{margin:4pt 0 1.5pt;font-size:8.7pt;line-height:1.05;break-after:avoid-page}
-  .body p{margin:0 0 2pt}
-  .body ul,.body ol{margin:0 0 3pt;padding-left:14pt}
-  .body li{margin:0 0 1.1pt;break-inside:avoid}
+  .body h2{margin:4pt 0 2pt;font-family:Georgia,serif;font-size:10pt;line-height:1.02;border-bottom:.6pt solid #777;padding-bottom:1.5pt;break-after:avoid-page}
+  .body h3{margin:3pt 0 1pt;font-size:8.2pt;line-height:1.02;break-after:avoid-page}
+  .body p{margin:0 0 1.5pt}
+  .body ul,.body ol{margin:0 0 2pt;padding-left:13pt}
+  .body li{margin:0 0 .8pt;break-inside:avoid}
+  .ingredients-page .ingredient-columns{column-count:2;column-gap:.24in;column-fill:auto}
+  .ingredients-page .ingredient-columns>h3{break-after:avoid;break-inside:avoid}
+  .ingredients-page .ingredient-columns>ul{break-inside:auto}
+  .ingredients-page.dense{font-size:7.4pt;line-height:1.06}
+  .ingredients-page.very-dense{font-size:6.8pt;line-height:1.02}
+  .instructions-page{font-size:7.6pt;line-height:1.08}
+  .instructions-page.dense{font-size:7pt;line-height:1.04}
+  .instructions-page.very-dense{font-size:6.5pt;line-height:1.01}
+  .instructions-page ol{padding-left:14pt}
+  .digital-only-note{display:block!important;position:absolute;right:0;bottom:0;font-size:6.3pt;font-style:italic;background:#fff;padding-left:5pt}
   .body code{padding:0;background:transparent;color:#000;font-family:inherit}
   .print-omit{display:none!important}
   h1,h2,h3,p,li{orphans:2;widows:2}
@@ -114,7 +128,18 @@ function md(text){
   closeList();
   return html;
 }
+function collectSection(heading){
+  const nodes=[];
+  let element=heading;
+  while(element&&element===heading||element&&element.tagName!=='H2'){
+    const next=element.nextElementSibling;
+    nodes.push(element);
+    element=next;
+  }
+  return nodes;
+}
 function preparePrintCard(recipe){
+  body.querySelectorAll('.print-page,.card-header,.digital-only-note').forEach(element=>element.remove());
   body.querySelectorAll('.print-omit').forEach(element=>element.classList.remove('print-omit'));
   body.querySelectorAll('.print-meta').forEach(element=>element.remove());
   const mainTitle=body.querySelector('h1');
@@ -129,10 +154,6 @@ function preparePrintCard(recipe){
       element.classList.add('print-omit');
       element=element.nextElementSibling;
     }
-    const meta=document.createElement('div');
-    meta.className='print-meta';
-    meta.innerHTML=`<span><strong>ID:</strong> ${esc(recipe.id||'—')}</span><span><strong>Servings:</strong> ${esc(servings)}</span><span><strong>Category:</strong> ${esc(mealCategory(recipe))}</span>`;
-    mainTitle.insertAdjacentElement('afterend',meta);
   }
   body.querySelectorAll('h2').forEach(heading=>{
     const section=heading.textContent.trim().toLowerCase();
@@ -144,6 +165,55 @@ function preparePrintCard(recipe){
       element=element.nextElementSibling;
     }
   });
+  const ingredientsHeading=[...body.querySelectorAll('h2')].find(h=>h.textContent.trim().toLowerCase()==='ingredients');
+  const instructionsHeading=[...body.querySelectorAll('h2')].find(h=>h.textContent.trim().toLowerCase()==='instructions');
+  if(!ingredientsHeading||!instructionsHeading)return;
+  const makeHeader=()=>{
+    const header=document.createElement('div');
+    header.className='card-header';
+    const heading=document.createElement('h1');
+    heading.textContent=mainTitle?.textContent||recipe.title||'Recipe';
+    const meta=document.createElement('div');
+    meta.className='print-meta';
+    meta.innerHTML=`<span><strong>ID:</strong> ${esc(recipe.id||'—')}</span><span><strong>Servings:</strong> ${esc(servings)}</span><span><strong>Category:</strong> ${esc(mealCategory(recipe))}</span>`;
+    header.append(heading,meta);
+    return header;
+  };
+  const ingredientsPage=document.createElement('section');
+  ingredientsPage.className='print-page ingredients-page';
+  ingredientsPage.append(makeHeader());
+  const ingredientColumns=document.createElement('div');
+  ingredientColumns.className='ingredient-columns';
+  let node=ingredientsHeading;
+  while(node&&node!==instructionsHeading){
+    const next=node.nextElementSibling;
+    ingredientColumns.append(node);
+    node=next;
+  }
+  ingredientsPage.append(ingredientColumns);
+  const ingredientCount=ingredientColumns.querySelectorAll('li').length;
+  if(ingredientCount>18)ingredientsPage.classList.add('dense');
+  if(ingredientCount>26)ingredientsPage.classList.add('very-dense');
+  const instructionsPage=document.createElement('section');
+  instructionsPage.className='print-page instructions-page';
+  instructionsPage.append(makeHeader());
+  node=instructionsHeading;
+  while(node&&node.tagName==='H2'||node&&node.tagName!=='H2'){
+    const next=node.nextElementSibling;
+    instructionsPage.append(node);
+    node=next;
+  }
+  const instructionItems=instructionsPage.querySelectorAll('li').length;
+  const instructionText=instructionsPage.textContent.length;
+  if(instructionItems>8||instructionText>1150)instructionsPage.classList.add('dense');
+  if(instructionItems>12||instructionText>1700)instructionsPage.classList.add('very-dense');
+  const note=document.createElement('div');
+  note.className='digital-only-note';
+  note.textContent='Full substitutions, storage, notes, and extra details remain in the digital recipe.';
+  instructionsPage.append(note);
+  body.prepend(instructionsPage);
+  body.prepend(ingredientsPage);
+  if(mainTitle)mainTitle.classList.add('print-omit');
 }
 function buildSearchText(recipe,markdown=''){return [recipe.id,recipe.title,recipe.mealCategory,recipe.category,recipe.description,...(Array.isArray(recipe.tags)?recipe.tags:[]),markdown].filter(Boolean).join(' ').toLowerCase()}
 function matchesSearch(recipe,query){const terms=query.split(/\s+/).filter(Boolean);return terms.every(term=>recipe.searchText.includes(term))}
