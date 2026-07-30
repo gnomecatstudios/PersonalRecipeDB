@@ -113,5 +113,21 @@
       "breakfast"
     ],
     "file": "recipes/R010-German-Pancake-Dutch-Baby.md"
+  },
+  {
+    "id": "R011",
+    "title": "Delicious Ham and Potato Soup",
+    "mealCategory": "Dinner",
+    "category": "Soup",
+    "description": "A creamy ham and potato soup with celery, onion, and a simple butter-and-flour milk base.",
+    "tags": [
+      "ham-and-potato-soup",
+      "potato-soup",
+      "ham-soup",
+      "creamy-soup",
+      "one-pot",
+      "dinner"
+    ],
+    "file": "recipes/R011-Delicious-Ham-and-Potato-Soup.md"
   }
 ]
