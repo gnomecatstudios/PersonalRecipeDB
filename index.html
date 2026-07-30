@@ -40,22 +40,25 @@ dialog::backdrop{background:#241a15aa}
 .body code{font-family:inherit;background:var(--soft);border-radius:5px;padding:1px 5px;color:var(--accent)}
 .body ul,.body ol{padding-left:1.35rem}
 .body li{margin:.35rem 0}
+.print-meta{display:none}
 footer{text-align:center;color:var(--muted);padding:0 0 40px}
 @media(max-width:600px){header{padding-top:20px}.hero{padding:26px}.body{padding:22px}.category-grid,.recipe-grid{grid-template-columns:1fr}}
 
-@page{size:6in 4in landscape;margin:.28in}
+@page{size:6in 4in landscape;margin:.25in .30in}
 @media print{
   html,body{width:auto;height:auto;background:#fff;color:#000}
   body>*:not(dialog){display:none!important}
   dialog,dialog[open]{display:block!important;position:static!important;inset:auto!important;width:auto!important;max-width:none!important;height:auto!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow:visible!important;background:#fff!important;box-shadow:none!important}
   dialog::backdrop,.bar{display:none!important}
-  .body{width:auto!important;margin:0!important;padding:.05in!important;font-family:Arial,Helvetica,sans-serif;font-size:8.4pt;line-height:1.18;color:#000}
-  .body h1{margin:0 0 5pt;font-family:Georgia,serif;font-size:17pt;line-height:1.02;border-bottom:1.2pt solid #000;padding-bottom:3pt}
-  .body h2{margin:7pt 0 3pt;font-family:Georgia,serif;font-size:11pt;line-height:1.05;border-bottom:.6pt solid #777;padding-bottom:2pt;break-after:avoid-page}
-  .body h3{margin:5pt 0 2pt;font-size:9pt;line-height:1.05;break-after:avoid-page}
-  .body p{margin:0 0 2.3pt}
-  .body ul,.body ol{margin:0 0 4pt;padding-left:15pt}
-  .body li{margin:0 0 1.3pt;break-inside:avoid}
+  .body{width:auto!important;margin:0!important;padding:0!important;font-family:Arial,Helvetica,sans-serif;font-size:8.2pt;line-height:1.16;color:#000}
+  .body h1{margin:0 0 3pt;font-family:Georgia,serif;font-size:15pt;line-height:1.04;border-bottom:1.1pt solid #000;padding-bottom:3pt}
+  .print-meta{display:grid!important;grid-template-columns:repeat(3,max-content);gap:3pt 14pt;margin:0 0 5pt;font-size:8pt;line-height:1.1}
+  .print-meta strong{font-weight:700}
+  .body h2{margin:5pt 0 2.5pt;font-family:Georgia,serif;font-size:10.5pt;line-height:1.05;border-bottom:.6pt solid #777;padding-bottom:1.5pt;break-after:avoid-page}
+  .body h3{margin:4pt 0 1.5pt;font-size:8.7pt;line-height:1.05;break-after:avoid-page}
+  .body p{margin:0 0 2pt}
+  .body ul,.body ol{margin:0 0 3pt;padding-left:14pt}
+  .body li{margin:0 0 1.1pt;break-inside:avoid}
   .body code{padding:0;background:transparent;color:#000;font-family:inherit}
   .print-omit{display:none!important}
   h1,h2,h3,p,li{orphans:2;widows:2}
@@ -111,10 +114,29 @@ function md(text){
   closeList();
   return html;
 }
-function omitNoteSectionsFromPrint(){
+function preparePrintCard(recipe){
   body.querySelectorAll('.print-omit').forEach(element=>element.classList.remove('print-omit'));
+  body.querySelectorAll('.print-meta').forEach(element=>element.remove());
+  const mainTitle=body.querySelector('h1');
+  const firstSection=body.querySelector('h2');
+  let servings='—';
+  if(mainTitle){
+    let element=mainTitle.nextElementSibling;
+    while(element&&element!==firstSection){
+      const text=element.textContent.trim();
+      const match=text.match(/^(?:Yield|Servings):\s*(.+)$/i);
+      if(match)servings=match[1].replace(/\s+servings?$/i,'').trim();
+      element.classList.add('print-omit');
+      element=element.nextElementSibling;
+    }
+    const meta=document.createElement('div');
+    meta.className='print-meta';
+    meta.innerHTML=`<span><strong>ID:</strong> ${esc(recipe.id||'—')}</span><span><strong>Servings:</strong> ${esc(servings)}</span><span><strong>Category:</strong> ${esc(mealCategory(recipe))}</span>`;
+    mainTitle.insertAdjacentElement('afterend',meta);
+  }
   body.querySelectorAll('h2').forEach(heading=>{
-    if(!heading.textContent.trim().toLowerCase().includes('notes'))return;
+    const section=heading.textContent.trim().toLowerCase();
+    if(section==='ingredients'||section==='instructions')return;
     heading.classList.add('print-omit');
     let element=heading.nextElementSibling;
     while(element&&element.tagName!=='H2'){
@@ -130,7 +152,7 @@ function recipeCards(list){if(!list.length)return '<div class="empty">No recipes
 function showCategories(){activeCategory=null;title.textContent='Recipe Categories';back.style.display='none';content.className='category-grid';content.innerHTML=categories.map((category,index)=>{const count=recipes.filter(recipe=>mealCategory(recipe)===category.name).length;return `<button class="category-card" data-category="${index}" type="button"><div><div class="category-icon">${category.icon}</div><h2>${esc(category.name)}</h2><p>${esc(category.description)}</p></div><span class="count">${count} ${count===1?'recipe':'recipes'}</span></button>`}).join('');content.querySelectorAll('.category-card').forEach(button=>button.addEventListener('click',()=>showCategory(categories[Number(button.dataset.category)].name)))}
 function showCategory(name){activeCategory=name;title.textContent=name;back.style.display='inline-block';content.className='recipe-grid';const shown=recipes.filter(recipe=>mealCategory(recipe)===name);content.innerHTML=recipeCards(shown);content.querySelectorAll('.recipe-card').forEach(button=>button.addEventListener('click',()=>openRecipe(shown[Number(button.dataset.index)])))}
 function showSearch(query){activeCategory=null;title.textContent='Search Results';back.style.display='inline-block';content.className='recipe-grid';const shown=recipes.filter(recipe=>matchesSearch(recipe,query));content.innerHTML=shown.length?recipeCards(shown):'<div class="empty">No recipes match that search.</div>';content.querySelectorAll('.recipe-card').forEach(button=>button.addEventListener('click',()=>openRecipe(shown[Number(button.dataset.index)])))}
-async function openRecipe(recipe){try{let markdown=recipe.markdown;if(!markdown){const response=await fetch(`${recipe.file}?v=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);markdown=await response.text()}body.innerHTML=md(markdown);omitNoteSectionsFromPrint();dialog.showModal()}catch{body.innerHTML='<h1>Recipe unavailable</h1><p>The recipe file could not be opened.</p>';dialog.showModal()}}
+async function openRecipe(recipe){try{let markdown=recipe.markdown;if(!markdown){const response=await fetch(`${recipe.file}?v=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);markdown=await response.text()}body.innerHTML=md(markdown);preparePrintCard(recipe);dialog.showModal()}catch{body.innerHTML='<h1>Recipe unavailable</h1><p>The recipe file could not be opened.</p>';dialog.showModal()}}
 search.addEventListener('input',()=>{const query=search.value.toLowerCase().trim();query?showSearch(query):showCategories()});
 back.addEventListener('click',()=>{search.value='';showCategories()});
 document.querySelector('#close').addEventListener('click',()=>dialog.close());
