@@ -97,5 +97,14 @@
     "description": "Moist spiced persimmon bars with chopped dates and walnuts, finished with a simple lemon glaze.",
     "tags": ["persimmon-bars", "lemon-glaze", "date-bars", "walnut-dessert", "fruit-dessert", "holiday-baking"],
     "file": "recipes/R015-Lemon-Glazed-Persimmon-Bars.md"
+  },
+  {
+    "id": "R016",
+    "title": "Mississippi Mud",
+    "mealCategory": "Sweets",
+    "category": "Dessert",
+    "description": "A chilled layered chocolate dessert with a pecan crust, cream cheese filling, chocolate pudding, and whipped topping.",
+    "tags": ["mississippi-mud", "chocolate-dessert", "layered-dessert", "pudding-dessert", "pecan-crust", "cream-cheese-dessert"],
+    "file": "recipes/R016-Mississippi-Mud.md"
   }
 ]
