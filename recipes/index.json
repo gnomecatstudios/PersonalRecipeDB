@@ -151,5 +151,14 @@
     "description": "A bold taco-style dry blend for crispy chickpeas, ground meat, vegetables, potatoes, or snack mixes.",
     "tags": ["taco-seasoning", "dry-seasoning-mix", "chickpea-seasoning", "mexican-inspired-seasoning", "meal-prep"],
     "file": "recipes/R021-Taco-Seasoning-Mix.md"
+  },
+  {
+    "id": "R022",
+    "title": "Air-Fried Crispy Chickpeas",
+    "mealCategory": "Snacks",
+    "category": "Snack",
+    "description": "Crunchy air-fried chickpeas that make a portable, high-fiber snack requiring no refrigeration.",
+    "tags": ["air-fried-crispy-chickpeas", "chickpea-snack", "air-fryer", "portable-snack", "high-fiber", "macro-friendly", "meal-prep"],
+    "file": "recipes/R022-Air-Fried-Crispy-Chickpeas.md"
   }
 ]
