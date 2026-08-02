@@ -106,5 +106,50 @@
     "description": "A chilled layered chocolate dessert with a pecan crust, cream cheese filling, chocolate pudding, and whipped topping.",
     "tags": ["mississippi-mud", "chocolate-dessert", "layered-dessert", "pudding-dessert", "pecan-crust", "cream-cheese-dessert"],
     "file": "recipes/R016-Mississippi-Mud.md"
+  },
+  {
+    "id": "R017",
+    "title": "Rosemary Garlic Seasoning Mix",
+    "mealCategory": "Seasonings",
+    "category": "Seasoning Mix",
+    "description": "A savory rosemary, garlic, and onion dry blend for crispy chickpeas, vegetables, potatoes, or chicken.",
+    "tags": ["rosemary-garlic-seasoning", "dry-seasoning-mix", "chickpea-seasoning", "herb-seasoning", "meal-prep"],
+    "file": "recipes/R017-Rosemary-Garlic-Seasoning-Mix.md"
+  },
+  {
+    "id": "R018",
+    "title": "Everything Bagel Seasoning Mix",
+    "mealCategory": "Seasonings",
+    "category": "Seasoning Mix",
+    "description": "A crunchy garlic, onion, sesame, and poppy seed blend for crispy chickpeas, eggs, toast, or vegetables.",
+    "tags": ["everything-bagel-seasoning", "dry-seasoning-mix", "chickpea-seasoning", "sesame-seasoning", "meal-prep"],
+    "file": "recipes/R018-Everything-Bagel-Seasoning-Mix.md"
+  },
+  {
+    "id": "R019",
+    "title": "Chili-Lime Seasoning Mix",
+    "mealCategory": "Seasonings",
+    "category": "Seasoning Mix",
+    "description": "A bright, smoky chili-lime dry blend for crispy chickpeas, corn, vegetables, or chicken.",
+    "tags": ["chili-lime-seasoning", "dry-seasoning-mix", "chickpea-seasoning", "smoky-seasoning", "meal-prep"],
+    "file": "recipes/R019-Chili-Lime-Seasoning-Mix.md"
+  },
+  {
+    "id": "R020",
+    "title": "Garlic Parmesan Seasoning Mix",
+    "mealCategory": "Seasonings",
+    "category": "Seasoning Mix",
+    "description": "A savory garlic and Parmesan blend for crispy chickpeas, popcorn, potatoes, vegetables, or breadsticks.",
+    "tags": ["garlic-parmesan-seasoning", "dry-seasoning-mix", "chickpea-seasoning", "cheese-seasoning", "meal-prep"],
+    "file": "recipes/R020-Garlic-Parmesan-Seasoning-Mix.md"
+  },
+  {
+    "id": "R021",
+    "title": "Taco Seasoning Mix",
+    "mealCategory": "Seasonings",
+    "category": "Seasoning Mix",
+    "description": "A bold taco-style dry blend for crispy chickpeas, ground meat, vegetables, potatoes, or snack mixes.",
+    "tags": ["taco-seasoning", "dry-seasoning-mix", "chickpea-seasoning", "mexican-inspired-seasoning", "meal-prep"],
+    "file": "recipes/R021-Taco-Seasoning-Mix.md"
   }
 ]
