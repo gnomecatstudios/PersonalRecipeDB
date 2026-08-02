@@ -160,5 +160,14 @@
     "description": "Crunchy air-fried chickpeas that make a portable, high-fiber snack requiring no refrigeration.",
     "tags": ["air-fried-crispy-chickpeas", "chickpea-snack", "air-fryer", "portable-snack", "high-fiber", "macro-friendly", "meal-prep"],
     "file": "recipes/R022-Air-Fried-Crispy-Chickpeas.md"
+  },
+  {
+    "id": "R023",
+    "title": "Apple Cinnamon Protein Bars",
+    "mealCategory": "Snacks",
+    "category": "Snack",
+    "description": "Soft baked protein bars with diced apple, vanilla, toasted pecans or walnuts, warm spices, and flaky sea salt.",
+    "tags": ["apple-cinnamon-protein-bars", "baked-protein-bars", "apple-snack", "toasted-pecans", "toasted-walnuts", "flaky-sea-salt", "high-protein", "meal-prep"],
+    "file": "recipes/R023-Apple-Cinnamon-Protein-Bars.md"
   }
 ]
