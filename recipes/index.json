@@ -169,5 +169,14 @@
     "description": "Soft baked protein bars with diced apple, vanilla, toasted pecans or walnuts, warm spices, and flaky sea salt.",
     "tags": ["apple-cinnamon-protein-bars", "baked-protein-bars", "apple-snack", "toasted-pecans", "toasted-walnuts", "flaky-sea-salt", "high-protein", "meal-prep"],
     "file": "recipes/R023-Apple-Cinnamon-Protein-Bars.md"
+  },
+  {
+    "id": "R024",
+    "title": "Apple Bar Citrus Finishing Salt",
+    "mealCategory": "Seasonings",
+    "category": "Finishing Salt",
+    "description": "A bright lemon-orange finishing salt with cinnamon and vanilla, designed for apple protein bars.",
+    "tags": ["apple-bar-citrus-finishing-salt", "citrus-sea-salt", "flaky-sea-salt", "apple-bar-topping", "lemon-zest", "orange-zest", "cinnamon-vanilla"],
+    "file": "recipes/R024-Apple-Bar-Citrus-Finishing-Salt.md"
   }
 ]
