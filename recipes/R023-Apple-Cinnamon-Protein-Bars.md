@@ -8,7 +8,7 @@
 **Total Time:** 40 minutes  
 **Yield:** 12 bars
 
-Soft baked protein bars with diced apple, warm spices, vanilla, toasted pecans or walnuts, and a flaky sea salt finish.
+Soft baked protein bars with oats as the main grain, plus a small amount of unsweetened crisp brown rice cereal for a lighter texture, diced apple, warm spices, vanilla, toasted pecans or walnuts, and flaky sea salt.
 
 ## Ingredients
 
@@ -17,6 +17,7 @@ Soft baked protein bars with diced apple, warm spices, vanilla, toasted pecans o
 - 240 g rolled oats
 - 120 g oat flour
 - 60 g vanilla protein powder
+- 25 g unsweetened crisp brown rice cereal or plain puffed rice
 - 10 g baking powder
 - 6 g ground cinnamon
 - 1 g ground nutmeg
@@ -48,10 +49,11 @@ Soft baked protein bars with diced apple, warm spices, vanilla, toasted pecans o
 6. In a separate bowl, whisk together the Greek yogurt, eggs, peanut butter, honey or maple syrup, and vanilla.
 7. Stir the wet mixture into the dry mixture. Add milk gradually until the batter resembles thick brownie batter.
 8. Fold in the diced apple and toasted nuts.
-9. Spread the batter evenly in the prepared pan.
-10. Bake for **20–24 minutes**, until the center is just set and the edges are lightly golden.
-11. While the bars are still warm, optionally drizzle lightly with honey or maple syrup and sprinkle evenly with flaky sea salt.
-12. Cool completely before slicing into 12 bars.
+9. Gently fold in the crisp brown rice cereal or puffed rice last so it is not crushed.
+10. Spread the batter evenly in the prepared pan.
+11. Bake for **20–24 minutes**, until the center is just set and the edges are lightly golden.
+12. While the bars are still warm, optionally drizzle lightly with honey or maple syrup and sprinkle evenly with flaky sea salt.
+13. Cool completely before slicing into 12 bars.
 
 ## Storage
 
