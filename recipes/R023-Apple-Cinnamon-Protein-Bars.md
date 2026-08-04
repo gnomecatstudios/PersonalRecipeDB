@@ -3,60 +3,67 @@
 **Recipe ID:** R023  
 **Course:** Snack  
 **Method:** Oven  
-**Prep Time:** 15 minutes  
-**Cook Time:** 20–24 minutes  
-**Total Time:** 40 minutes  
+**Prep Time:** 25 minutes  
+**Cook Time:** 28–32 minutes  
+**Total Time:** 1 hour 10 minutes, including chilling  
 **Yield:** 12 bars
 
-Soft baked protein bars with oats as the main grain, plus a small amount of unsweetened crisp brown rice cereal for a lighter texture, diced apple, warm spices, vanilla, toasted pecans or walnuts, and flaky sea salt.
+Soft, chewy baked protein bars made with equal parts tart Granny Smith and sweet Honeycrisp apple. Toasted oats provide a hearty chew, while a smaller amount of puffed rice creates lighter, crisp pockets throughout.
 
 ## Ingredients
 
 ### Dry Ingredients
 
-- 240 g rolled oats
-- 120 g oat flour
-- 60 g vanilla protein powder
-- 25 g unsweetened crisp brown rice cereal or plain puffed rice
-- 10 g baking powder
-- 6 g ground cinnamon
-- 1 g ground nutmeg
-- 2 g salt
+- 360 g rolled oats
+- 100 g vanilla protein powder
+- 90 g unsweetened crisp brown rice cereal or plain puffed rice
+- 30 g oat flour
+- 30 g pecans or walnuts, toasted and roughly chopped
+- 8 g ground cinnamon
+- 2 g ground nutmeg
+- 2 g ground ginger
+- 5 g baking powder
+- 3 g salt
+
+### Apples
+
+- 150 g Granny Smith apple, peeled and diced into 1/4-inch (6 mm) pieces
+- 150 g Honeycrisp apple, peeled and diced into 1/4-inch (6 mm) pieces
 
 ### Wet Ingredients
 
-- 240 g plain nonfat Greek yogurt
+- 180 g unsweetened applesauce
+- 130 g natural peanut butter
+- 80 g honey
 - 2 large eggs
-- 80 g natural peanut butter
-- 60 g honey or maple syrup
-- 10 g vanilla extract
-- 60–120 ml milk, as needed
-
-### Mix-ins and Topping
-
-- 180 g apple, finely diced
-- 50 g pecans or walnuts, toasted and roughly chopped
-- 1 teaspoon flaky sea salt, for topping
-- Optional: 10–15 g honey or maple syrup, for a light finishing drizzle
+- 60 g milk
+- 5 g vanilla extract
 
 ## Instructions
 
-1. Preheat the oven to **350°F (175°C)**.
-2. Line an **8 × 8-inch (20 × 20 cm)** baking pan with parchment paper.
-3. Spread the chopped pecans or walnuts on a small baking sheet. Toast pecans for **6–8 minutes** or walnuts for **8–10 minutes**, stirring once. Cool slightly.
-4. Dice the apple into approximately **1/4-inch (6 mm)** pieces.
-5. In a large bowl, combine the rolled oats, oat flour, protein powder, baking powder, cinnamon, nutmeg, and salt.
-6. In a separate bowl, whisk together the Greek yogurt, eggs, peanut butter, honey or maple syrup, and vanilla.
-7. Stir the wet mixture into the dry mixture. Add milk gradually until the batter resembles thick brownie batter.
-8. Fold in the diced apple and toasted nuts.
-9. Gently fold in the crisp brown rice cereal or puffed rice last so it is not crushed.
-10. Spread the batter evenly in the prepared pan.
-11. Bake for **20–24 minutes**, until the center is just set and the edges are lightly golden.
-12. While the bars are still warm, optionally drizzle lightly with honey or maple syrup and sprinkle evenly with flaky sea salt.
-13. Cool completely before slicing into 12 bars.
+1. Preheat the oven to **325°F (165°C)**.
+2. Spread the rolled oats on a baking sheet and toast for **8–10 minutes**, stirring once. Let cool slightly.
+3. Increase the oven temperature to **350°F (175°C)**.
+4. Line a **9 × 13-inch (23 × 33 cm)** baking pan with parchment paper.
+5. In a large bowl, combine the toasted oats, protein powder, puffed rice cereal, oat flour, toasted nuts, cinnamon, nutmeg, ginger, baking powder, and salt.
+6. In a separate bowl, whisk together the applesauce, peanut butter, honey, eggs, milk, and vanilla until smooth.
+7. Stir the wet mixture into the dry mixture just until combined.
+8. Fold in the diced Granny Smith and Honeycrisp apples.
+9. Let the mixture rest for **10 minutes** so the oats absorb some moisture.
+10. Press the mixture firmly and evenly into the prepared pan.
+11. Bake for **28–32 minutes**, until the center is set and the edges are lightly golden.
+12. Cool completely, then refrigerate for **1 hour** before cutting into 12 bars.
+
+## Texture
+
+- Lightly crisp edges
+- Soft, chewy center
+- Moist apple pieces
+- Small crisp pockets from the puffed rice
+- Toasted nut crunch
 
 ## Storage
 
-- Store at room temperature for up to 2 days.
-- Refrigerate for up to 1 week.
+- Store in an airtight container at room temperature for up to 3 days.
+- Refrigerate for 7–10 days.
 - Freeze individually wrapped bars for up to 3 months.
