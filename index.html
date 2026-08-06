@@ -15,14 +15,27 @@ h1,h2{font-family:Georgia,serif}h1{margin:0;font-size:clamp(2.5rem,8vw,5rem);lin
 .empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px}.back{display:none}
 dialog{width:min(820px,calc(100% - 24px));max-height:calc(100vh - 24px);border:0;border-radius:22px;padding:0;background:var(--bg)}dialog::backdrop{background:#241a15aa}.bar{position:sticky;top:0;z-index:2;justify-content:flex-end;padding:12px;background:#fff8edee;border-bottom:1px solid var(--line)}#add.added{background:var(--soft);color:var(--accent)}.body{padding:30px}.body h1{font-size:2.6rem}.body h2{border-bottom:1px solid var(--line);padding-bottom:5px}.body ul,.body ol{padding-left:1.35rem}footer{text-align:center;color:var(--muted);padding-bottom:35px}
 @media(max-width:600px){.grid{grid-template-columns:1fr}.hero{padding:25px}.body{padding:22px}}
-@media print{body>*:not(dialog){display:none!important}dialog,dialog[open]{display:block!important;position:static!important;width:auto!important;max-height:none!important}.bar{display:none!important}.body{padding:0;font:10pt Arial,sans-serif}}
+@page{size:A6 portrait;margin:.20in .08in .08in .08in}
+@media print{
+html,body{width:105mm!important;min-height:148mm!important;margin:0!important;padding:0!important;background:#fff!important}
+body>*:not(dialog){display:none!important}
+dialog,dialog[open]{display:block!important;position:static!important;width:auto!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow:visible!important;background:#fff!important}
+.bar{display:none!important}
+.body{width:100%!important;margin:0!important;padding:0!important;color:#000!important;font:9pt/1.08 Arial,sans-serif!important;overflow:visible!important}
+.body h1{margin:0 0 .08in!important;font:700 15pt/1.05 Arial,sans-serif!important;break-after:avoid-page}
+.body h2{margin:.10in 0 .04in!important;padding:0 0 .02in!important;border-bottom:.5pt solid #999!important;font:700 10.5pt/1.05 Arial,sans-serif!important;break-after:avoid-page}
+.body h3{margin:.08in 0 .03in!important;font:700 9.5pt/1.05 Arial,sans-serif!important;break-after:avoid-page}
+.body p{margin:.03in 0!important}
+.body ul,.body ol{margin:.03in 0 .06in!important;padding-left:.18in!important}
+.body li{margin:0 0 .025in!important;break-inside:avoid}
+}
 </style>
 </head>
 <body>
 <header class="wrap"><section class="hero"><div class="eyebrow">Personal Recipe Collection</div><h1>Calvin's Recipe Book</h1><p class="muted">Browse by category or search recipes and ingredients.</p><div class="actions"><a id="header-list" class="button primary" href="shopping-list.html">Show List (0)</a></div></section><input id="search" type="search" placeholder="Search recipes or ingredients…"></header>
 <main class="wrap"><div class="topline"><h2 id="view-title">Recipe Categories</h2><button id="back" class="back">← Categories</button></div><div id="content" class="grid"></div></main>
 <footer class="wrap">PersonalRecipeDB · Built with GitHub Pages</footer>
-<dialog id="recipe"><div class="bar"><button id="add">Add to List</button><a id="show-list" class="button" href="shopping-list.html">Show List (0)</a><button id="print" class="primary">Print 4×6</button><button id="close">Close</button></div><article id="body" class="body"></article></dialog>
+<dialog id="recipe"><div class="bar"><button id="add">Add to List</button><a id="show-list" class="button" href="shopping-list.html">Show List (0)</a><button id="print" class="primary">Print A6</button><button id="close">Close</button></div><article id="body" class="body"></article></dialog>
 <script>
 const $=s=>document.querySelector(s),content=$('#content'),search=$('#search'),dialog=$('#recipe'),body=$('#body'),title=$('#view-title'),back=$('#back'),add=$('#add');
 const cats=[['Breakfast','☀️'],['Lunch','🥪'],['Dinner','🍽️'],['Sides','🥔'],['Snacks','🥨'],['Sweets','🍰'],['Seasonings','🧂']];
