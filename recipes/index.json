@@ -187,5 +187,14 @@
     "description": "Soft baked protein bars with dried cranberries, chopped almonds, and a light almond flavor.",
     "tags": ["cranberry-almond-protein-bars", "baked-protein-bars", "dried-cranberries", "chopped-almonds", "almond-extract", "high-protein", "portable-snack", "meal-prep"],
     "file": "recipes/R025-Cranberry-Almond-Protein-Bars.md"
+  },
+  {
+    "id": "R026",
+    "title": "Cottage Cheese Protein Bread",
+    "mealCategory": "Breakfast",
+    "category": "High-Protein Bread",
+    "description": "A simple baked protein bread made with cottage cheese, eggs, butter, and egg white powder.",
+    "tags": ["cottage-cheese-protein-bread", "high-protein-bread", "cottage-cheese", "egg-white-powder", "baked-breakfast", "meal-prep"],
+    "file": "recipes/R026-Cottage-Cheese-Protein-Bread.md"
   }
 ]
