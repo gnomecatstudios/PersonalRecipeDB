@@ -13,21 +13,24 @@ h1,h2{font-family:Georgia,serif}h1{margin:0;font-size:clamp(2.5rem,8vw,5rem);lin
 #search{width:100%;margin-top:22px;padding:15px 18px;border:1px solid var(--line);border-radius:999px;font:inherit}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;padding-bottom:50px}
 .card{padding:22px;border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:0 12px 28px #57311610;text-align:left;cursor:pointer}.card h2{margin:8px 0}.category{min-height:190px;display:flex;flex-direction:column;justify-content:space-between}.icon{font-size:2.2rem}.count{display:inline-block;width:max-content;background:var(--soft);color:var(--accent);padding:5px 10px;border-radius:999px;font-size:.8rem;font-weight:800}
 .empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px}.back{display:none}
-dialog{width:min(820px,calc(100% - 24px));max-height:calc(100vh - 24px);border:0;border-radius:22px;padding:0;background:var(--bg)}dialog::backdrop{background:#241a15aa}.bar{position:sticky;top:0;z-index:2;justify-content:flex-end;padding:12px;background:#fff8edee;border-bottom:1px solid var(--line)}#add.added{background:var(--soft);color:var(--accent)}.body{padding:30px}.body h1{font-size:2.6rem}.body h2{border-bottom:1px solid var(--line);padding-bottom:5px}.body ul,.body ol{padding-left:1.35rem}footer{text-align:center;color:var(--muted);padding-bottom:35px}
+dialog{width:min(820px,calc(100% - 24px));max-height:calc(100vh - 24px);border:0;border-radius:22px;padding:0;background:var(--bg)}dialog::backdrop{background:#241a15aa}.bar{position:sticky;top:0;z-index:2;justify-content:flex-end;padding:12px;background:#fff8edee;border-bottom:1px solid var(--line)}#add.added{background:var(--soft);color:var(--accent)}.body{padding:30px}.body h1{font-size:2.6rem}.body h2{border-bottom:1px solid var(--line);padding-bottom:5px}.body ul,.body ol{padding-left:1.35rem}footer{text-align:center;color:var(--muted);padding-bottom:35px}#print-area{display:none}
 @media(max-width:600px){.grid{grid-template-columns:1fr}.hero{padding:25px}.body{padding:22px}}
 @page{size:A6 portrait;margin:.20in .08in .08in .08in}
 @media print{
-html,body{width:105mm!important;min-height:148mm!important;margin:0!important;padding:0!important;background:#fff!important}
-body>*:not(dialog){display:none!important}
-dialog,dialog[open]{display:block!important;position:static!important;width:auto!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow:visible!important;background:#fff!important}
-.bar{display:none!important}
-.body{width:100%!important;margin:0!important;padding:0!important;color:#000!important;font:9pt/1.08 Arial,sans-serif!important;overflow:visible!important}
-.body h1{margin:0 0 .08in!important;font:700 15pt/1.05 Arial,sans-serif!important;break-after:avoid-page}
-.body h2{margin:.10in 0 .04in!important;padding:0 0 .02in!important;border-bottom:.5pt solid #999!important;font:700 10.5pt/1.05 Arial,sans-serif!important;break-after:avoid-page}
-.body h3{margin:.08in 0 .03in!important;font:700 9.5pt/1.05 Arial,sans-serif!important;break-after:avoid-page}
-.body p{margin:.03in 0!important}
-.body ul,.body ol{margin:.03in 0 .06in!important;padding-left:.18in!important}
-.body li{margin:0 0 .025in!important;break-inside:avoid}
+html,body{margin:0!important;padding:0!important;background:#fff!important}
+body>*{display:none!important}#print-area{display:block!important}
+.print-page{display:block!important;position:relative;width:100%;height:calc(148mm - .36in);margin:0;padding:0;color:#000;background:#fff;font:8.8pt/1.08 Arial,sans-serif;overflow:hidden;break-after:page;page-break-after:always}
+.print-page:last-child{break-after:auto;page-break-after:auto}
+.print-title{margin:0 0 .06in;font:700 14pt/1.02 Arial,sans-serif}
+.print-meta{display:flex;flex-wrap:wrap;gap:.02in .12in;margin:0 0 .07in;font-size:8pt}
+.print-heading{margin:0 0 .04in;padding:0 0 .02in;border-bottom:.5pt solid #888;font:700 10.5pt/1 Arial,sans-serif}
+.print-ingredients{columns:1;column-gap:.16in;margin:0;padding:0;list-style:none}
+.print-ingredients.two-col{columns:2}
+.print-ingredients li{break-inside:avoid;margin:0 0 .025in}
+.print-ingredients li::before{content:'□ ';font-size:9pt}
+.print-instructions{margin:0;padding-left:.18in}
+.print-instructions li{margin:0 0 .035in;break-inside:avoid}
+.print-qr{position:absolute;right:0;bottom:0;width:.3in;height:.3in;border:1px solid #000;display:grid;place-items:center;font:700 5pt Arial,sans-serif}
 }
 </style>
 </head>
@@ -36,8 +39,9 @@ dialog,dialog[open]{display:block!important;position:static!important;width:auto
 <main class="wrap"><div class="topline"><h2 id="view-title">Recipe Categories</h2><button id="back" class="back">← Categories</button></div><div id="content" class="grid"></div></main>
 <footer class="wrap">PersonalRecipeDB · Built with GitHub Pages</footer>
 <dialog id="recipe"><div class="bar"><button id="add">Add to List</button><a id="show-list" class="button" href="shopping-list.html">Show List (0)</a><button id="print" class="primary">Print A6</button><button id="close">Close</button></div><article id="body" class="body"></article></dialog>
+<section id="print-area" aria-hidden="true"></section>
 <script>
-const $=s=>document.querySelector(s),content=$('#content'),search=$('#search'),dialog=$('#recipe'),body=$('#body'),title=$('#view-title'),back=$('#back'),add=$('#add');
+const $=s=>document.querySelector(s),content=$('#content'),search=$('#search'),dialog=$('#recipe'),body=$('#body'),title=$('#view-title'),back=$('#back'),add=$('#add'),printArea=$('#print-area');
 const cats=[['Breakfast','☀️'],['Lunch','🥪'],['Dinner','🍽️'],['Sides','🥔'],['Snacks','🥨'],['Sweets','🍰'],['Seasonings','🧂']];
 let recipes=[],current=null;
 const esc=(v='')=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
@@ -48,6 +52,10 @@ function refreshListButtons(){const n=ids().size,u=listUrl();$('#header-list').t
 function meal(r){if(r.mealCategory)return r.mealCategory;if(r.category==='Side Dish')return'Sides';if(r.category==='Snack')return'Snacks';if(r.category==='Soup')return'Dinner';if(/dessert|sweet/i.test(r.category||''))return'Sweets';return r.category||'Dinner'}
 function inline(t=''){return esc(t).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>')}
 function md(text){let h='',list='';const close=()=>{if(list){h+=`</${list}>`;list=''}};for(const line of text.split('\n')){if(line.startsWith('# ')){close();h+=`<h1>${inline(line.slice(2))}</h1>`}else if(line.startsWith('## ')){close();h+=`<h2>${inline(line.slice(3))}</h2>`}else if(line.startsWith('### ')){close();h+=`<h3>${inline(line.slice(4))}</h3>`}else if(/^\d+\. /.test(line)){if(list!=='ol'){close();list='ol';h+='<ol>'}h+=`<li>${inline(line.replace(/^\d+\. /,''))}</li>`}else if(line.startsWith('- ')){if(list!=='ul'){close();list='ul';h+='<ul>'}h+=`<li>${inline(line.slice(2))}</li>`}else{close();if(line.trim())h+=`<p>${inline(line)}</p>`}}close();return h}
+function section(markdown,name){const lines=markdown.split('\n'),start=lines.findIndex(x=>x.trim().toLowerCase()===`## ${name}`.toLowerCase());if(start<0)return[];const out=[];for(let i=start+1;i<lines.length&&!/^##\s/.test(lines[i]);i++)if(lines[i].trim())out.push(lines[i].trim());return out}
+function meta(markdown,label){const re=new RegExp(`\\*\\*${label}:\\*\\*\\s*([^\\n]+)`,'i'),m=markdown.match(re);return m?m[1].replace(/\s+$/,''):''}
+function clean(s){return s.replace(/^[-*]\s+/,'').replace(/^\d+\.\s+/,'').replace(/\*\*/g,'').trim()}
+function buildPrint(){if(!current)return;const m=current.markdown||'',ingredients=section(m,'Ingredients').filter(x=>/^[-*]\s+/.test(x)).map(clean),instructions=section(m,'Instructions').filter(x=>/^\d+\.\s+/.test(x)).map(clean);const titleText=(m.match(/^#\s+(.+)$/m)||[])[1]||current.title;const facts=[['ID',meta(m,'Recipe ID')||current.id],['Prep',meta(m,'Prep Time')],['Cook',meta(m,'Cook Time')],['Total',meta(m,'Total Time')],['Yield',meta(m,'Yield')]].filter(x=>x[1]);printArea.innerHTML=`<article class="print-page"><h1 class="print-title">${esc(titleText)}</h1><div class="print-meta">${facts.map(x=>`<span><b>${esc(x[0])}:</b> ${esc(x[1])}</span>`).join('')}</div><h2 class="print-heading">Ingredients</h2><ul class="print-ingredients ${ingredients.length>14?'two-col':''}">${ingredients.map(x=>`<li>${inline(x)}</li>`).join('')}</ul></article><article class="print-page"><h1 class="print-title">${esc(titleText)}</h1><h2 class="print-heading">Instructions</h2><ol class="print-instructions">${instructions.map(x=>`<li>${inline(x)}</li>`).join('')}</ol><div class="print-qr">QR</div></article>`}
 async function hydrate(r){try{const x=await fetch(`${r.file}?v=${Date.now()}`,{cache:'no-store'}),m=await x.text();return{...r,markdown:m,searchText:[r.id,r.title,r.category,r.description,...(r.tags||[]),m].join(' ').toLowerCase()}}catch{return{...r,markdown:'',searchText:''}}}
 function cards(list){content.innerHTML=list.length?list.map((r,i)=>`<button class="card recipe" data-i="${i}"><div class="type">${esc(r.category||'Recipe')}</div><h2>${esc(r.title)}</h2><p class="desc">${esc(r.description||'Open recipe')}</p></button>`).join(''):'<div class="empty">No recipes found.</div>';content.querySelectorAll('.recipe').forEach(b=>b.onclick=()=>openRecipe(list[+b.dataset.i]))}
 function categories(){title.textContent='Recipe Categories';back.style.display='none';content.innerHTML=cats.map(([n,ic],i)=>`<button class="card category" data-i="${i}"><div><div class="icon">${ic}</div><h2>${n}</h2></div><span class="count">${recipes.filter(r=>meal(r)===n).length} recipes</span></button>`).join('');content.querySelectorAll('.category').forEach(b=>b.onclick=()=>showCat(cats[+b.dataset.i][0]))}
@@ -55,7 +63,7 @@ function showCat(n){title.textContent=n;back.style.display='inline-block';cards(
 function showSearch(q){title.textContent='Search Results';back.style.display='inline-block';cards(recipes.filter(r=>q.split(/\s+/).every(t=>r.searchText.includes(t))))}
 async function openRecipe(r){current=r;body.innerHTML=md(r.markdown||await (await fetch(r.file)).text());refreshListButtons();dialog.showModal();history.replaceState(null,'',`?recipe=${encodeURIComponent(r.id)}`)}
 add.onclick=()=>{if(!current)return;const s=ids();s.add(current.id);saveIds(s);refreshListButtons()};
-$('#close').onclick=()=>{dialog.close();current=null;history.replaceState(null,'',location.pathname)};$('#print').onclick=()=>window.print();search.oninput=()=>search.value.trim()?showSearch(search.value.toLowerCase().trim()):categories();back.onclick=()=>{search.value='';categories()};window.addEventListener('storage',refreshListButtons);
+$('#close').onclick=()=>{dialog.close();current=null;history.replaceState(null,'',location.pathname)};$('#print').onclick=()=>{buildPrint();window.print()};search.oninput=()=>search.value.trim()?showSearch(search.value.toLowerCase().trim()):categories();back.onclick=()=>{search.value='';categories()};window.addEventListener('storage',refreshListButtons);
 fetch(`recipes/index.json?v=${Date.now()}`,{cache:'no-store'}).then(r=>r.json()).then(async d=>{recipes=await Promise.all(d.map(hydrate));categories();refreshListButtons();const id=new URLSearchParams(location.search).get('recipe');const f=recipes.find(r=>r.id===id);if(f)openRecipe(f)}).catch(()=>content.innerHTML='<div class="empty">The recipe list could not be loaded.</div>');
 </script>
 </body></html>
