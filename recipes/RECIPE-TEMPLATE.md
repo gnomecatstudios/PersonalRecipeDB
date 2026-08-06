@@ -1,14 +1,38 @@
-# Recipe Title
+# Recipe Name
 
-## Quick Facts
+**Recipe ID:** R0XX  
+**Category:**  
+**Method:**  
+**Prep Time:**  
+**Cook Time:**  
+**Total Time:**  
+**Yield:**  
+**Tags:** `specific-tag`, `specific-tag`
 
-- **Cooking Method:**
-- **Prep Time:**
-- **Cook Time:**
-- **Total Time:**
-- **Servings:**
-- **Rotation:**
-- **Difficulty:**
+A short description of the recipe.
+
+## Ingredients
+
+- Ingredient measurements, with grams first when practical
+
+## Instructions
+
+1. Write clear, numbered steps.
+2. Use Fahrenheit temperatures only.
+
+## Variations
+
+- Optional variations.
+
+## Substitutions
+
+- Practical substitutions.
+
+## Storage
+
+- **Room temperature:**
+- **Refrigerator:**
+- **Freezer:**
 
 ## Nutrition
 
@@ -18,43 +42,49 @@
 - **Fat:**
 - **Fiber:**
 
-## Cost
+## Equipment
 
-- **Cost per serving:**
-- **Estimated batch cost:**
+- Required equipment.
 
-## Ingredients
+## Notes
 
-- Exact measurements for every ingredient.
+- Troubleshooting, serving ideas, or make-ahead notes.
 
-## Instructions
+---
 
-1. Add clear, numbered steps.
+## 4×6 Print Card Standard
 
-## Freezer Instructions
+The printed card is two-sided and uses Fahrenheit only.
 
-Explain how to cool, package, label, and freeze.
+### Front — Ingredients
 
-## Refrigerator Life
+Include only:
 
-Add the safe refrigerator storage time.
+- Recipe name
+- ID
+- Prep, cook, and total times
+- Yield
+- Ingredients with hollow checkboxes
 
-## Freezer Life
+Keep all ingredients on the front. Use two columns when necessary.
 
-Add the recommended freezer storage time.
+### Back — Instructions
 
-## Reheating Instructions
+Include only:
 
-Add the best reheating method and target temperature when relevant.
+- Recipe name
+- Numbered instructions
+- Cooking temperature when applicable
+- A 0.3 × 0.3 inch QR code in the bottom-right corner
 
-## Ingredient Substitutions
+The QR code links to the full digital recipe. Storage, nutrition, variations, substitutions, equipment, and notes remain on the digital page and are not printed on the card.
 
-- Add practical substitutions.
+### Print Formatting
 
-## Meal Pairings
-
-- Add sides, toppings, or complementary meals.
-
-## Notes / Next Time I’d Change
-
-- Record adjustments for the next batch.
+- Card size: 4 × 6 inches, portrait
+- Margins: 0.05–0.07 inches
+- Fahrenheit only
+- Grams first when practical
+- Hollow checkboxes: □
+- Label the recipe number as **ID**
+- Do not print categories, tags, source information, nutrition, storage, or notes
