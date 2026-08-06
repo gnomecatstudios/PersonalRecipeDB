@@ -52,9 +52,9 @@ A short description of the recipe.
 
 ---
 
-## 4×6 Print Card Standard
+## A6-on-4×6 Print Card Standard
 
-Each recipe prints as exactly two 4×6-inch portrait pages: one ingredient page and one instruction page. Use the largest reliable printable area supported by the printer.
+Each recipe prints as exactly two A6 portrait pages on physical 4×6-inch index-card stock: one ingredient page and one instruction page. The A6 document size provides a small safety border on the slightly taller 4×6 card.
 
 ### Page 1 — Ingredients
 
@@ -79,14 +79,15 @@ Include only:
 
 Keep every instruction on Page 2. The QR code links to the full digital recipe. Storage, nutrition, variations, substitutions, equipment, and notes remain on the digital page and do not print.
 
-### Maximum Print-Area Formatting
+### Print Formatting
 
-- Paper size: exactly 4 × 6 inches
+- Document size: A6, 105 × 148 mm (about 4.13 × 5.83 inches)
+- Physical paper: 4 × 6 inches, 101.6 × 152.4 mm
 - Orientation: portrait
 - Page count: exactly 2 pages
-- Target margins: 0.05 inch on every side
-- Maximum allowed margin: 0.07 inch on every side
-- Approximate usable area at 0.05-inch margins: 3.9 × 5.9 inches
+- Scaling: 100% / Actual Size
+- Center on physical paper when the print dialog supports it
+- Use minimum reliable document margins
 - No decorative borders, headers, footers, page numbers, or unused reserved space
 - Recipe title: 14–16 pt, reduced only when necessary
 - Section headings: 10–11 pt bold
@@ -99,3 +100,13 @@ Keep every instruction on Page 2. The QR code links to the full digital recipe. 
 - Do not print categories, tags, source information, nutrition, storage, substitutions, variations, equipment, or notes
 - Scale content down only enough to prevent overflow; never create a third page
 - QR code must remain exactly 0.3 × 0.3 inches and must not overlap text
+
+### Printer Settings
+
+- Select A6 as the paper/document size in the application or printer dialog
+- Load 4×6-inch index cards into the printer
+- Print at 100% / Actual Size
+- Disable Fit to Page and Shrink to Printable Area
+- Enable center-on-page when available
+- Use Thick Paper or Cardstock mode when supported
+- Use 600 dpi or HQ 1200
