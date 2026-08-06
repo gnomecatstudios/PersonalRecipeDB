@@ -15,22 +15,22 @@ h1,h2{font-family:Georgia,serif}h1{margin:0;font-size:clamp(2.5rem,8vw,5rem);lin
 .empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px}.back{display:none}
 dialog{width:min(820px,calc(100% - 24px));max-height:calc(100vh - 24px);border:0;border-radius:22px;padding:0;background:var(--bg)}dialog::backdrop{background:#241a15aa}.bar{position:sticky;top:0;z-index:2;justify-content:flex-end;padding:12px;background:#fff8edee;border-bottom:1px solid var(--line)}#add.added{background:var(--soft);color:var(--accent)}.body{padding:30px}.body h1{font-size:2.6rem}.body h2{border-bottom:1px solid var(--line);padding-bottom:5px}.body ul,.body ol{padding-left:1.35rem}footer{text-align:center;color:var(--muted);padding-bottom:35px}#print-area{display:none}
 @media(max-width:600px){.grid{grid-template-columns:1fr}.hero{padding:25px}.body{padding:22px}}
-@page{size:A6 portrait;margin:.20in .08in .08in .08in}
+@page{size:A6 portrait;margin:.22in .12in .12in .12in}
 @media print{
 html,body{margin:0!important;padding:0!important;background:#fff!important}
 body>*{display:none!important}#print-area{display:block!important}
-.print-page{display:block!important;position:relative;width:100%;height:calc(148mm - .36in);margin:0;padding:0;color:#000;background:#fff;font:8.8pt/1.08 Arial,sans-serif;overflow:hidden;break-after:page;page-break-after:always}
+.print-page{display:block!important;position:relative;width:100%;height:calc(148mm - .46in);margin:0;padding:.08in;color:#000;background:#fff;font:8.8pt/1.08 Arial,sans-serif;overflow:hidden;break-after:page;page-break-after:always;box-sizing:border-box}
 .print-page:last-child{break-after:auto;page-break-after:auto}
-.print-title{margin:0 0 .06in;font:700 14pt/1.02 Arial,sans-serif}
+.print-title{margin:.06in 0 .08in;font:700 14pt/1.05 Arial,sans-serif}
 .print-meta{display:flex;flex-wrap:wrap;gap:.02in .12in;margin:0 0 .07in;font-size:8pt}
-.print-heading{margin:0 0 .04in;padding:0 0 .02in;border-bottom:.5pt solid #888;font:700 10.5pt/1 Arial,sans-serif}
-.print-ingredients{columns:1;column-gap:.16in;margin:0;padding:0;list-style:none}
+.print-heading{margin:.10in 0 .04in;padding:0 0 .02in;border-bottom:.5pt solid #888;font:700 10.5pt/1.05 Arial,sans-serif}
+.print-ingredients{columns:1;column-gap:.16in;margin:.03in 0 .06in;padding-left:.18in;list-style:none}
 .print-ingredients.two-col{columns:2}
-.print-ingredients li{break-inside:avoid;margin:0 0 .025in}
+.print-ingredients li{break-inside:avoid;margin:0 0 .02in}
 .print-ingredients li::before{content:'□ ';font-size:9pt}
-.print-instructions{margin:0;padding-left:.18in}
-.print-instructions li{margin:0 0 .035in;break-inside:avoid}
-.print-qr{position:absolute;right:0;bottom:0;width:.3in;height:.3in;border:1px solid #000;display:grid;place-items:center;font:700 5pt Arial,sans-serif}
+.print-instructions{margin:.03in 0 .06in;padding-left:.18in}
+.print-instructions li{margin:0 0 .02in;break-inside:avoid}
+.print-qr{position:absolute;right:.08in;bottom:.08in;width:.3in;height:.3in;border:1px solid #000;display:grid;place-items:center;font:700 5pt Arial,sans-serif}
 }
 </style>
 </head>
