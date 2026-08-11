@@ -205,5 +205,14 @@
     "description": "Classic soft Mexican torta rolls with a lightly floured crust and the traditional double ridges across the top.",
     "tags": ["teleras", "mexican-bread", "torta-roll", "sandwich-roll", "yeast-bread", "stand-mixer"],
     "file": "recipes/R027-Teleras.md"
+  },
+  {
+    "id": "R028",
+    "title": "Homemade Mexican Chorizo",
+    "mealCategory": "Dinner",
+    "category": "Ingredient / Protein",
+    "description": "A richly seasoned fresh Mexican-style chorizo made with ground pork, dried chiles, warm spices, and vinegar.",
+    "tags": ["homemade-mexican-chorizo", "fresh-chorizo", "ground-pork", "mexican-inspired", "chile-seasoned-pork", "stovetop"],
+    "file": "recipes/R028-Homemade-Mexican-Chorizo.md"
   }
 ]
