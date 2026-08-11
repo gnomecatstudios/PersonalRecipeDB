@@ -196,5 +196,14 @@
     "description": "A simple baked protein bread made with cottage cheese, eggs, butter, and egg white powder.",
     "tags": ["cottage-cheese-protein-bread", "high-protein-bread", "cottage-cheese", "egg-white-powder", "baked-breakfast", "meal-prep"],
     "file": "recipes/R026-Cottage-Cheese-Protein-Bread.md"
+  },
+  {
+    "id": "R027",
+    "title": "Teleras",
+    "mealCategory": "Sides",
+    "category": "Mexican Bread",
+    "description": "Classic soft Mexican torta rolls with a lightly floured crust and the traditional double ridges across the top.",
+    "tags": ["teleras", "mexican-bread", "torta-roll", "sandwich-roll", "yeast-bread", "stand-mixer"],
+    "file": "recipes/R027-Teleras.md"
   }
 ]
